@@ -1,0 +1,15 @@
+.accueil {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+h5.card-title {
+  text-align: center;
+  padding: 15px 0;
+}
+.card {
+  width: 170px;
+  max-height: 170px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

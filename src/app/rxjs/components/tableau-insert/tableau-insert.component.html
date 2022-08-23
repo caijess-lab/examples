@@ -1,0 +1,42 @@
+<h1>{{title}}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Open</th>
+      <th scope="col">Close</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Solde</th>
+      <th scope="col">S26</th>
+      <th scope="col">S27</th>
+      <th scope="col">S28</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let row of compteurs"
+      [ngClass]="{
+        red: row.refTypeCompteur
+      }"
+    >
+      <td>
+        <a
+          *ngIf="!row.showDetail && row.isDetailPossible === '1'"
+          (click)="getDetail($event, row, 'open')"
+          >Ouvrir</a
+        >
+      </td>
+      <td>
+        <a
+          *ngIf="row.showDetail && row.isDetailPossible === '1'"
+          (click)="getDetail($event, row, 'close')"
+          >Fermer</a
+        >
+      </td>
+      <td>{{ row.libelle }}</td>
+      <td>{{ row.mois }}</td>
+      <td>{{ row.semaine26 }}</td>
+      <td>{{ row.semaine27 }}</td>
+      <td>{{ row.semaine28 }}</td>
+    </tr>
+  </tbody>
+</table>

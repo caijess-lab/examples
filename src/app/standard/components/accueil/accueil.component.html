@@ -1,0 +1,12 @@
+<div class="accueil">
+  <div
+    *ngFor="let menu of menus"
+    class="card"
+    style="background-color: {{ menu.color }};"
+    (click)="goToScreen(menu.url)"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ menu.title }}</h5>
+    </div>
+  </div>
+</div>

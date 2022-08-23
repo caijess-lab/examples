@@ -1,0 +1,11 @@
+<!-- USERS WITH TODOS -->
+<h1>{{title}}</h1>
+<div *ngFor="let user of usersWithTodos$ | async as users">
+  <span>{{ user.name }}</span>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of user.todos">
+      {{ todo.title }}
+    </li>
+  </ul>
+</div>
+<!-- END OF USERS WITH TODOS -->

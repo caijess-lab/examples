@@ -1,0 +1,67 @@
+<!-- USERS WITH TODOS AND POSTS -->
+<h1>{{ title }}</h1>
+<div
+  class="accordion"
+  id="accordionExample"
+  *ngFor="let user of usersWithTodosAndPosts$ | async as users"
+>
+  <div class="user-header">{{ user.name }}</div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="todos-{{ user.id }}">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse-todos-' + user.id"
+        aria-expanded="true"
+        [attr.aria-controls]="'collapse-todos-' + user.id"
+      >
+        Todos
+      </button>
+    </h2>
+    <div
+      id="collapse-todos-{{ user.id }}"
+      class="accordion-collapse collapse show"
+      [attr.aria-labelledby]="'todos-' + user.id"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let todo of user.todos">
+            {{ todo.title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="posts-{{ user.id }}">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        [attr.data-bs-target]="'#collapse-posts-' + user.id"
+        aria-expanded="true"
+        [attr.aria-controls]="'collapse-posts-' + user.id"
+      >
+        Posts
+      </button>
+    </h2>
+    <div
+      id="collapse-posts-{{ user.id }}"
+      class="accordion-collapse collapse show"
+      [attr.aria-labelledby]="'posts-' + user.id"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let post of user.posts">
+            <strong>{{ post.title }}</strong>
+            <div>{{ post.body }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END OF USERS WITH TODOS AND POSTS -->

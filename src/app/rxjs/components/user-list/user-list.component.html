@@ -1,0 +1,9 @@
+<!-- LIST OF USERS -->
+<h1>{{title}}</h1>
+<div *ngIf="users$ | async as users">
+<div *ngFor="let user of users">
+  <span *ngIf="user.id <= 10">{{ user.name }}</span>
+</div>
+</div>
+<br />
+<!-- END OF LIST OF USERS -->

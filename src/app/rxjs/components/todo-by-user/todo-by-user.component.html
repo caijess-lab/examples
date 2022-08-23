@@ -1,0 +1,14 @@
+<!-- TODOS WITH USERS -->
+<h1>{{title}}</h1>
+<div class="container">
+  <table>
+    <th>User</th>
+    <th>Title</th>
+    <tr *ngFor="let t of todosWithUsers$ | async as todosUsers">
+      <td>{{ t.userId }}</td>
+      <td>{{ t.title }}</td>
+    </tr>
+  </table>
+</div>
+<br />
+<!-- END OF TODOS WITH USERS -->
