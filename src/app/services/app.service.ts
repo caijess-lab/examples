@@ -52,5 +52,15 @@ export class AppService {
       url: '/boiteDeDialogue',
       color: '#f7a1a4',
     },
+    {
+      title: 'Identifier les catégories',
+      url: '/identifierCategorie',
+      color: '#cacf85',
+    },
+    {
+      title: 'Table de multiplication',
+      url: '/tableMultiplication',
+      color: '#8cba80',
+    },
   ];
 }

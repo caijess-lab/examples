@@ -17,6 +17,8 @@ import { TableauInsertComponent } from './rxjs/components/tableau-insert/tableau
 import { BoiteDeDialogueComponent } from './standard/components/boite-de-dialogue/boite-de-dialogue.component';
 import { RxjsBaseService } from './rxjs/services/rxjs.service';
 import { AppService } from './services/app.service';
+import { IdentifierCategorieComponent } from './standard/components/identifier-categorie/identifier-categorie.component';
+import { TableMultiplicationComponent } from './standard/components/table-multiplication/table-multiplication.component';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -36,6 +38,12 @@ const routes: Routes = [
   },{
     path: 'boiteDeDialogue',
     component: BoiteDeDialogueComponent
+  }, {
+    path: 'identifierCategorie',
+    component: IdentifierCategorieComponent
+  }, {
+    path: 'tableMultiplication',
+    component: TableMultiplicationComponent
   }
 ];
 
@@ -59,6 +67,8 @@ const routes: Routes = [
     TableauInsertComponent,
     UserByTodoComponent,
     BoiteDeDialogueComponent,
+    IdentifierCategorieComponent,
+    TableMultiplicationComponent,
   ],
   bootstrap: [AppComponent],
   providers: [AppService, RxjsBaseService],

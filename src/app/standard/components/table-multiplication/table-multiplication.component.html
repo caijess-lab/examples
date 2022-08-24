@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<button type="button" (click)="setNombre()">Saisir le nombre à multiplier</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let i of counter(10)">{{i}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td *ngFor="let j of counter(10)">{{getMultiplication(j)}}</td>
+    </tr>
+  </tbody>
+</table>
