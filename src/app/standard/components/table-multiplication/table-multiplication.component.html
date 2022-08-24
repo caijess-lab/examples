@@ -1,15 +1,16 @@
 <h1>{{title}}</h1>
-<button type="button" (click)="setNombre()">Saisir le nombre à multiplier</button>
+<button type="button" (click)="setNombreAMultipler()">Saisir le nombre à multiplier</button>
+<button type="button" (click)="setMultiplicationBase()">Saisir la base de multiplication</button>
 
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let i of counter(10)">{{i}}</th>
+      <th *ngFor="let i of baseMultiplication">{{i}}</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-        <td *ngFor="let j of counter(10)">{{getMultiplication(j)}}</td>
+        <td *ngFor="let j of baseMultiplication">{{getMultiplication(j)}}</td>
     </tr>
   </tbody>
 </table>

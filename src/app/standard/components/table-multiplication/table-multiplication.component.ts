@@ -23,6 +23,7 @@ Utiliser les boucles imbriquées pour afficher l'ensemble des tables de multipli
 })
 export class TableMultiplicationComponent  {
   protected title: string;
+  baseMultiplication: number[] = [];
   
   constructor(protected router: Router, appService: AppService) {
     this.title = appService.menus.filter(
@@ -40,7 +41,14 @@ export class TableMultiplicationComponent  {
 
   multiplierPar!: number;
 
-  setNombre() {
+  setMultiplicationBase() {
+    let l_nombreBase = prompt("Sur quelle base multiplier ?");
+    if (l_nombreBase && l_nombreBase!="") {
+      this.baseMultiplication = this.counter(parseInt(l_nombreBase));
+    }
+  }
+
+  setNombreAMultipler() {
     let l_nombre = prompt("Nombre à multiplier ?");
     if (l_nombre && l_nombre!="") {
       this.multiplierPar = parseInt(l_nombre);
