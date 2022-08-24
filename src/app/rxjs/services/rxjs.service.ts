@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Todo } from '../models/todo';
 import { Post } from '../models/post';
 import { User } from '../models/user';
+import { AppService } from 'src/app/services/app.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class RxjsBaseService {
   postsUrl: string = 'https://jsonplaceholder.typicode.com/posts';
   commentsUrl: string = 'https://jsonplaceholder.typicode.com/comments';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public appService: AppService) {}
 
   todos$ = this.http.get<Todo[]>(this.todosUrl).pipe(
     tap((data) => {
@@ -129,51 +130,5 @@ export class RxjsBaseService {
     })
   );
 
-  menus = [
-    {
-      title: 'Accueil',
-      url: '/accueil',
-      color: '#ffffff',
-    },
-    {
-      title: 'Liste des tâches',
-      url: '/todos',
-      color: '#AAB1E0',
-    },
-    {
-      title: 'Liste des utilisateurs',
-      url: '/users',
-      color: '#A1C9DA',
-    },
-    {
-      title: 'Liste des tâches par utilisateurs',
-      url: '/todosWithUsers',
-      color: '#EAFAB5',
-    },
-    {
-      title: 'Liste des utilisateurs par tâches',
-      url: '/usersWithTodos',
-      color: '#FAE896',
-    },
-    {
-      title: 'Liste des utilisateurs avec tâches et articles',
-      url: '/usersWithTodosAndPosts',
-      color: '#FFDBBE',
-    },
-    {
-      title: 'Liste des utilisateurs avec tâches, articles et commentaires',
-      url: '/usersWithTodosAndPostsAndComments',
-      color: '#FFCCBE',
-    },
-    {
-      title: 'Tableau insertion de lignes',
-      url: '/tableauinsert',
-      color: '#F6D7E1',
-    },
-    {
-      title: 'Boîte de dialogue',
-      url: '/boiteDeDialogue',
-      color: '#f7a1a4',
-    },
-  ];
+  menus = this.appService.menus;
 }
